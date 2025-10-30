@@ -4,8 +4,8 @@
 [Workshop 1](./docs/workshop_1.md)
 
 ## Assignments
-[Everything you neet to know about Git](https://www.youtube.com/watch?v=K6Q31YkorUE)
-[Homework 1](./docs/homework_1.md)
+- [Everything you neet to know about Git](https://www.youtube.com/watch?v=K6Q31YkorUE)
+- [Homework 1](./docs/homework_1.md)
 
 
 ## Books
