@@ -1,5 +1,5 @@
 is_logged_in = True
-has_two_factor = False
+has_two_factor = True
 
 # Basic boolean operators
 can_access_account = is_logged_in and has_two_factor

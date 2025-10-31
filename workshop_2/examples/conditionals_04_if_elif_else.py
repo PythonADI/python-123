@@ -1,8 +1,8 @@
-credit_score = 720
-annual_income = 68000
-has_outstanding_debt = False
+credit_score = 760
+annual_income = 100_000
+has_outstanding_debt = True
 
-if credit_score >= 760 and annual_income >= 85000:
+if credit_score >= 760 and annual_income >= 85000 and not has_outstanding_debt:
     print("Loan status: Preferred customer offer unlocked.")
 elif credit_score >= 700 and annual_income >= 50000 and not has_outstanding_debt:
     print("Loan status: Approved with standard rates.")
