@@ -1,7 +1,8 @@
 # Python
 
 ## Topics
-[Workshop 1](./docs/workshop_1.md)
+- [Workshop 1](./docs/workshop_1.md)
+- [Workshop 2](./workshop_2/README.md)
 
 ## Assignments
 - [Everything you neet to know about Git](https://www.youtube.com/watch?v=K6Q31YkorUE)
