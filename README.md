@@ -7,6 +7,7 @@
 ## Assignments
 - [Everything you neet to know about Git](https://www.youtube.com/watch?v=K6Q31YkorUE)
 - [Homework 1](./docs/homework_1.md)
+- [Homework 2](./docs/homework_2.md)
 
 
 ## Books
