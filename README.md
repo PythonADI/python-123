@@ -9,6 +9,7 @@
 - [Homework 1](./docs/homework_1.md)
 - [Homework 2](./docs/homework_2.md)
 - [Homework 3](./docs/homework_3.md)
+- [Homework 4](./docs/homework_4.md)
 
 
 ## Books
