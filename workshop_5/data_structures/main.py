@@ -5,7 +5,7 @@ hero = {
     "gold": 0,
     "hp": 100,
     "xp": 0,
-    "inventory": [],
+    "inventory": [1, 2, 3, 4],
     "weapon": None
 }
 
