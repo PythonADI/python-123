@@ -11,6 +11,8 @@
 - [Homework 3](./docs/homework_3.md)
 - [Homework 4](./docs/homework_4.md)
 - [Homework 5](./docs/homework_5.md)
+- [Homework 6](./docs/homework_6.md)
+- [Homework 7](./docs/homework_7.md)
 
 
 ## Books
