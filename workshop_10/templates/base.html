@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Nexus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: '#0ff4c6',
+                        plasma: '#6a00f4',
+                        midnight: '#050510'
+                    },
+                    fontFamily: {
+                        orbitron: ['"Orbitron"', 'sans-serif'],
+                        inter: ['"Inter"', 'sans-serif']
+                    },
+                    backdropBlur: {
+                        xs: '2px'
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-midnight text-white font-inter">
+    <div class="relative min-h-screen overflow-hidden">
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(10,200,255,0.25),_transparent_50%),_radial-gradient(circle_at_bottom,_rgba(130,0,255,0.18),_transparent_45%)]"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.06]"></div>
+        
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

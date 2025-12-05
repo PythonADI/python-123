@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="relative z-10 flex flex-col gap-16 px-6 py-12 sm:px-10 lg:px-24">
+    <header class="flex flex-col gap-6 text-center">
+        <div class="mx-auto flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xs">
+            <span class="h-2 w-2 animate-ping rounded-full bg-cyber"></span>
+            <span class="text-xs uppercase tracking-[0.35em] text-white/70">Neon Nexus</span>
+        </div>
+        <h1 class="font-orbitron text-4xl uppercase tracking-[0.2em] text-cyber drop-shadow-[0_0_18px_rgba(15,244,198,0.6)] sm:text-5xl">
+            About the Collective
+        </h1>
+        <p class="mx-auto max-w-2xl text-sm text-white/70 sm:text-base">
+            Greetings {{ request.user|default:'Explorer' }}. This node chronicles the story behind our luminous network—where creators, coders, and dreamers synchronize to pulse future-forward narratives into the feed.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 text-xs uppercase tracking-[0.25em] text-white/50">
+            <span class="rounded-full border border-white/20 bg-white/5 px-4 py-1">Vision</span>
+            <span class="rounded-full border border-white/20 bg-white/5 px-4 py-1">Community</span>
+            <span class="rounded-full border border-white/20 bg-white/5 px-4 py-1">Innovation</span>
+        </div>
+        <a href="/" class="group inline-flex items-center gap-3 self-center rounded-full bg-gradient-to-r from-plasma via-cyber to-plasma px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-midnight transition hover:shadow-[0_0_30px_rgba(106,0,244,0.45)]">
+            <span class="transition-transform group-hover:-translate-x-1">←</span>
+            Back to Feed
+        </a>
+    </header>
+
+    <main class="grid gap-8 lg:grid-cols-[2fr_3fr]">
+        <section class="space-y-6 rounded-3xl border border-white/5 bg-white/5 p-8 shadow-[0_35px_120px_rgba(5,5,16,0.45)] backdrop-blur-md">
+            <h2 class="font-orbitron text-xl uppercase tracking-[0.15em] text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]">
+                Our Origin Signal
+            </h2>
+            <p class="text-sm leading-relaxed text-white/70">
+                Neon Nexus began as a late-night experiment inside a co-working lab bathed in ultraviolet glow. A handful of creators wanted a space where big ideas and bold aesthetics collided. The result is a living chronicle of culture, code, and cosmic curiosity, boosted by the collective energy of our community.
+            </p>
+            <p class="text-sm leading-relaxed text-white/70">
+                Every transmission you see across the feed is peer-reviewed by the Nexus Council, ensuring each signal resonates with authenticity, clarity, and purpose. We thrive on collaboration, remixing perspectives into bright constellations of insight.
+            </p>
+        </section>
+
+        <section class="space-y-6">
+            <div class="rounded-3xl border border-white/5 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 shadow-[0_35px_120px_rgba(5,5,16,0.45)] backdrop-blur-md">
+                <h2 class="font-orbitron text-xl uppercase tracking-[0.15em] text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]">
+                    Core Protocols
+                </h2>
+                <ul class="mt-4 space-y-3 text-sm text-white/70">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-2 w-2 rounded-full bg-cyber shadow-[0_0_12px_rgba(15,244,198,0.9)]"></span>
+                        Signal with empathy—every story is coded with respect and curiosity.
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-2 w-2 rounded-full bg-cyber shadow-[0_0_12px_rgba(15,244,198,0.9)]"></span>
+                        Architect boldly—use design and development to illuminate new possibilities.
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 h-2 w-2 rounded-full bg-cyber shadow-[0_0_12px_rgba(15,244,198,0.9)]"></span>
+                        Share openly—knowledge thrives when it flows freely through the grid.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rounded-3xl border border-white/5 bg-white/5 p-8 shadow-[0_35px_120px_rgba(5,5,16,0.45)] backdrop-blur-md">
+                <h2 class="font-orbitron text-xl uppercase tracking-[0.15em] text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]">
+                    Navigator Timeline
+                </h2>
+                <ol class="mt-6 space-y-5 border-l border-white/10 pl-6 text-sm text-white/70">
+                    <li class="relative">
+                        <span class="absolute -left-[13px] mt-1 h-3 w-3 rounded-full bg-plasma shadow-[0_0_14px_rgba(106,0,244,0.9)]"></span>
+                        <p class="text-xs uppercase tracking-[0.2em] text-white/50">2022 · Ignition</p>
+                        <p>Prototype feed goes live with the first ten signalers.</p>
+                    </li>
+                    <li class="relative">
+                        <span class="absolute -left-[13px] mt-1 h-3 w-3 rounded-full bg-cyber shadow-[0_0_14px_rgba(15,244,198,0.9)]"></span>
+                        <p class="text-xs uppercase tracking-[0.2em] text-white/50">2023 · Expansion</p>
+                        <p>Quantum relay architecture deployed; community triples in size.</p>
+                    </li>
+                    <li class="relative">
+                        <span class="absolute -left-[13px] mt-1 h-3 w-3 rounded-full bg-white shadow-[0_0_14px_rgba(255,255,255,0.85)]"></span>
+                        <p class="text-xs uppercase tracking-[0.2em] text-white/50">2025 · Resonance</p>
+                        <p>Launching personalized signal paths for members like you.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <section class="rounded-3xl border border-white/5 bg-gradient-to-br from-plasma/20 via-transparent to-cyber/20 p-10 text-center shadow-[0_35px_120px_rgba(5,5,16,0.45)] backdrop-blur-md">
+        <h2 class="font-orbitron text-2xl uppercase tracking-[0.18em] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.35)]">Join the Transmission</h2>
+        <p class="mt-4 text-sm leading-relaxed text-white/70">
+            Ready to contribute your own signal? Align with fellow explorers, amplify the conversation, and help us chart territory beyond the neon horizon.
+        </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a href="/" class="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-plasma via-cyber to-plasma px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-midnight transition hover:shadow-[0_0_30px_rgba(106,0,244,0.45)]">
+                Return to Feed
+                <span class="transition-transform group-hover:translate-x-1">→</span>
+            </a>
+            <a href="mailto:contact@neonnexus.io" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-2 text-sm uppercase tracking-[0.2em] text-white/70 transition hover:border-cyber hover:text-cyber">
+                Contact the Council
+            </a>
+        </div>
+    </section>
+
+    <footer class="mt-auto flex flex-col items-center gap-2 text-center text-xs text-white/40">
+        <p>© {{ now|date:'Y' }} Neon Nexus — Illuminating tomorrow's web today.</p>
+        <p>Crafted with Tailwind CSS quantum styling.</p>
+    </footer>
+</div>
+
+{% endblock %}

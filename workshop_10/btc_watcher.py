@@ -1,4 +1,4 @@
- qimport httpx
+import httpx
 import time
 
 API_URL = "https://api.coinbase.com/v2/prices/BTC-USD/spot"

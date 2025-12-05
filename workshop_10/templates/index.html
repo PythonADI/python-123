@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="relative z-10 flex flex-col gap-10 px-6 py-12 sm:px-10 lg:px-24">
+    <header class="flex flex-col items-center gap-4 text-center">
+        <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xs">
+            <span class="h-2 w-2 animate-ping rounded-full bg-cyber"></span>
+            <span class="text-xs uppercase tracking-[0.35em] text-white/70">Neural Feed</span>
+        </div>
+        <h1 class="font-orbitron text-4xl uppercase tracking-[0.2em] text-cyber drop-shadow-[0_0_18px_rgba(15,244,198,0.6)] sm:text-5xl">Welcome, {{ request.user|default:'Explorer' }}</h1>
+        <p class="max-w-2xl text-sm text-white/70 sm:text-base">
+            Tap into the latest transmissions coded straight from the neon grid. Every post streams through a quantum relay for instant insights.
+        </p>
+        <a href="#posts" class="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-plasma via-cyber to-plasma px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-midnight transition hover:shadow-[0_0_30px_rgba(106,0,244,0.45)]">
+            Engage Feed
+            <span class="transition-transform group-hover:translate-x-1">→</span>
+        </a>
+        <a href="/about/" class="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-plasma via-cyber to-plasma px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-midnight transition hover:shadow-[0_0_30px_rgba(106,0,244,0.45)]">
+            About Us
+            <span class="transition-transform group-hover:translate-x-1">→</span>
+        </a>
+    </header>
+
+    <main id="posts" class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        {% for post in posts %}
+            <article class="relative overflow-hidden rounded-3xl border border-white/5 bg-white/5 p-6 shadow-[0_35px_120px_rgba(5,5,16,0.45)] backdrop-blur-md transition hover:border-cyber/40 hover:shadow-[0_40px_160px_rgba(15,244,198,0.32)]">
+                <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyber/60 to-transparent"></div>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs uppercase tracking-[0.3em] text-white/60">{{ post.author }}</span>
+                </div>
+                <h2 class="mt-4 font-orbitron text-xl uppercase tracking-[0.15em] text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]">
+                    {{ post.title }}
+                </h2>
+                <p class="mt-3 text-sm leading-relaxed text-white/70">
+                    {{ post.text }}
+                </p>
+                <div class="mt-6 flex items-center justify-between text-xs text-white/50">
+                    <span class="inline-flex items-center gap-2">
+                        <span class="h-2 w-2 rounded-full bg-cyber shadow-[0_0_12px_rgba(15,244,198,0.9)]"></span>
+                        Data Stream
+                    </span>
+                    <button class="rounded-full border border-white/20 px-3 py-1 uppercase tracking-[0.25em] text-white/70 transition hover:border-cyber hover:text-cyber">
+                        Decode
+                    </button>
+                </div>
+            </article>
+        {% empty %}
+            <div class="col-span-full rounded-3xl border border-dashed border-white/20 bg-white/5 p-12 text-center text-white/60 backdrop-blur-sm">
+                Transmission silent. Awaiting new signals.
+            </div>
+        {% endfor %}
+    </main>
+
+    <footer class="mt-auto flex flex-col items-center gap-2 text-center text-xs text-white/40">
+        <p>© 2026 Neon Nexus — Crafted for the future web.</p>
+        <p>Powered by Tailwind CSS hyperdrive.</p>
+    </footer>
+</div>
+{% endblock %}
