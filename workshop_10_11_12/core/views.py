@@ -7,7 +7,7 @@ def home_view(request):
         request, 
         "index.html",
         {
-            "posts": Post.objects.all()
+            "posts": Post.objects.all().order_by("-create_date")
         }
     )
 
