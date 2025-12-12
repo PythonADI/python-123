@@ -1,0 +1,7 @@
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    {% comment %} {{ form.errors }} {% endcomment %}
+    <button>post</button>
+</form>

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="relative z-10 px-6 py-12 sm:px-10 lg:px-24">
+    <div class="mx-auto max-w-4xl space-y-10 rounded-3xl border border-white/10 bg-white/5 p-10 shadow-[0_35px_120px_rgba(5,5,16,0.45)] backdrop-blur-md">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <a href="/" class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/60 transition hover:text-cyber">
+                <span class="text-lg">←</span>
+                Back to Feed
+            </a>
+            <div class="flex flex-col items-start text-xs uppercase tracking-[0.35em] text-white/50 sm:items-end">
+                <span>{{ post.create_date|date:"d F, Y" }}</span>
+                <span>Updated {{ post.update_date|timesince }} ago</span>
+            </div>
+        </div>
+
+        <header class="space-y-4">
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.35em] text-white/60">
+                <span class="h-2 w-2 rounded-full bg-cyber shadow-[0_0_10px_rgba(15,244,198,0.8)]"></span>
+                Live Transmission
+            </div>
+            <h1 class="font-orbitron text-4xl uppercase tracking-[0.2em] text-white drop-shadow-[0_0_18px_rgba(255,255,255,0.4)]">
+                {{ post.title }}
+            </h1>
+            <p class="text-sm uppercase tracking-[0.25em] text-white/50">
+                Curated by
+                <span class="text-cyber">{{ post.author.username }}</span>
+                {% comment %} • Origin {{ post.author.birthdate|date:"d F, Y" }} {% endcomment %}
+            </p>
+        </header>
+
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 text-base leading-relaxed text-white/80">
+            <div class="absolute -left-10 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-cyber/10 blur-3xl"></div>
+            <div class="absolute -right-10 top-0 h-32 w-32 rounded-full bg-plasma/10 blur-3xl"></div>
+            <p class="relative whitespace-pre-line">{{ post.text }}</p>
+        </div>
+
+        <footer class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/60">
+                <span class="h-2 w-2 rounded-full bg-plasma shadow-[0_0_12px_rgba(106,0,244,0.9)]"></span>
+                Signal secured in the Neon archive.
+            </div>
+            <a href="/posts/" class="inline-flex items-center gap-3 rounded-full border border-white/20 px-5 py-2 text-xs uppercase tracking-[0.35em] text-white/70 transition hover:border-cyber hover:text-cyber">
+                View All Posts
+                <span>→</span>
+            </a>
+        </footer>
+    </div>
+</div>
+{% endblock %}

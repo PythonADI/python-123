@@ -31,6 +31,24 @@
     <div class="relative min-h-screen overflow-hidden">
         <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(10,200,255,0.25),_transparent_50%),_radial-gradient(circle_at_bottom,_rgba(130,0,255,0.18),_transparent_45%)]"></div>
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.06]"></div>
+        <nav class="relative z-20">
+            <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+                <a href="/" class="font-orbitron text-lg uppercase tracking-[0.4em] text-cyber drop-shadow-[0_0_12px_rgba(15,244,198,0.45)]">Neon Nexus</a>
+                <div class="hidden items-center gap-8 text-xs uppercase tracking-[0.35em] text-white/70 sm:flex">
+                    <a href="/" class="transition hover:text-cyber">Home</a>
+                    <a href="/about/" class="transition hover:text-cyber">About</a>
+                </div>
+
+                {% if request.user.is_authenticated %}
+                    Welcome {{ request.user }}
+                {% else %}
+                    <a href="/join/" class="inline-flex items-center gap-2 rounded-full border border-cyber/60 bg-cyber/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-cyber transition hover:bg-cyber hover:text-midnight">
+                        Join
+                        <span>→</span>
+                    </a>
+                {% endif %}
+            </div>
+        </nav>
         
         {% block content %}
         {% endblock %}
