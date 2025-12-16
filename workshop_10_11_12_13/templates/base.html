@@ -33,10 +33,10 @@
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.06]" style="z-index: -10;" ></div>
         <nav class="relative z-20">
             <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-                <a href="/" class="font-orbitron text-lg uppercase tracking-[0.4em] text-cyber drop-shadow-[0_0_12px_rgba(15,244,198,0.45)]">Neon Nexus</a>
+                <a href="{% url 'home' %}" class="font-orbitron text-lg uppercase tracking-[0.4em] text-cyber drop-shadow-[0_0_12px_rgba(15,244,198,0.45)]">Neon Nexus</a>
                 <div class="hidden items-center gap-8 text-xs uppercase tracking-[0.35em] text-white/70 sm:flex">
-                    <a href="/" class="transition hover:text-cyber">Home</a>
-                    <a href="/about/" class="transition hover:text-cyber">About</a>
+                    <a href="{% url 'home' %}" class="transition hover:text-cyber">Home</a>
+                    <a href="{% url 'about' %}" class="transition hover:text-cyber">About</a>
                 </div>
 
                 {% if request.user.is_authenticated %}

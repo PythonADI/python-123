@@ -3,26 +3,8 @@
 
 {% block content %}
 <div class="relative z-10 flex flex-col gap-10 px-6 py-12 sm:px-10 lg:px-24">
-    <header class="flex flex-col items-center gap-4 text-center">
-        <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xs">
-            <span class="h-2 w-2 animate-ping rounded-full bg-cyber"></span>
-            <span class="text-xs uppercase tracking-[0.35em] text-white/70">Neural Feed</span>
-        </div>
-        <h1 class="font-orbitron text-4xl uppercase tracking-[0.2em] text-cyber drop-shadow-[0_0_18px_rgba(15,244,198,0.6)] sm:text-5xl">Welcome, {{ request.user|default:'Explorer' }}</h1>
-        <p class="max-w-2xl text-sm text-white/70 sm:text-base">
-            Tap into the latest transmissions coded straight from the neon grid. Every post streams through a quantum relay for instant insights.
-        </p>
-        <a href="#posts" class="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-plasma via-cyber to-plasma px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-midnight transition hover:shadow-[0_0_30px_rgba(106,0,244,0.45)]">
-            Engage Feed
-            <span class="transition-transform group-hover:translate-x-1">→</span>
-        </a>
-        <a href="/about/" class="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-plasma via-cyber to-plasma px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-midnight transition hover:shadow-[0_0_30px_rgba(106,0,244,0.45)]">
-            About Us
-            <span class="transition-transform group-hover:translate-x-1">→</span>
-        </a>
-    </header>
 
-    <a href="/post/add/" class="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-plasma via-cyber to-plasma px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-midnight transition hover:shadow-[0_0_30px_rgba(106,0,244,0.45)]">
+    <a href="{% url 'post_add' %}" class="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-plasma via-cyber to-plasma px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-midnight transition hover:shadow-[0_0_30px_rgba(106,0,244,0.45)]">
         New Transmission
         <span class="transition-transform group-hover:translate-x-1">→</span>
     </a>
@@ -49,7 +31,7 @@
                         <span class="h-2 w-2 rounded-full bg-cyber shadow-[0_0_12px_rgba(15,244,198,0.9)]"></span>
                         Data Stream
                     </span>
-                    <a href="/post/{{ post.pk }}" class="rounded-full border border-white/20 px-3 py-1 uppercase tracking-[0.25em] text-white/70 transition hover:border-cyber hover:text-cyber"
+                    <a href="{% url 'post_details' post.pk %}" class="rounded-full border border-white/20 px-3 py-1 uppercase tracking-[0.25em] text-white/70 transition hover:border-cyber hover:text-cyber"
                     >
                         Decode
                     </a>
