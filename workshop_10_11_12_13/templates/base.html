@@ -30,7 +30,7 @@
 <body class="min-h-screen bg-midnight text-white font-inter">
     <div class="relative min-h-screen overflow-hidden">
         <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(10,200,255,0.25),_transparent_50%),_radial-gradient(circle_at_bottom,_rgba(130,0,255,0.18),_transparent_45%)]"></div>
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.06]"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.06]" style="z-index: -10;" ></div>
         <nav class="relative z-20">
             <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
                 <a href="/" class="font-orbitron text-lg uppercase tracking-[0.4em] text-cyber drop-shadow-[0_0_12px_rgba(15,244,198,0.45)]">Neon Nexus</a>
@@ -40,12 +40,49 @@
                 </div>
 
                 {% if request.user.is_authenticated %}
-                    Welcome {{ request.user }}
+                    <div class="hidden items-center gap-8 text-xs uppercase tracking-[0.35em] text-white/70 sm:flex">
+                        <span class="text-xs text-white/70">
+                            Welcome {{ request.user }}
+                        </span>
+                        <div class="relative inline-block text-left ml-4">
+                            <button type="button" class="inline-flex justify-center w-full rounded-md border border-cyber/60 bg-cyber/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-cyber transition hover:bg-cyber hover:text-midnight focus:outline-none" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                ▼
+                            </button>
+                            <div class="origin-top-right absolute right-0 mt-2 w-28 rounded-md shadow-lg bg-midnight ring-1 ring-black ring-opacity-5 focus:outline-none z-30 hidden group-hover:block" id="dropdown-menu">
+                                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                                    <form method="post" action="{% url 'logout' %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="block w-full text-left px-4 py-2 text-xs text-cyber hover:bg-cyber hover:text-midnight rounded transition" role="menuitem">Logout</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            // Simple dropdown toggle
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const button = document.getElementById('menu-button');
+                                const menu = document.getElementById('dropdown-menu');
+                                button.addEventListener('click', function(e) {
+                                    e.stopPropagation();
+                                    menu.classList.toggle('hidden');
+                                });
+                                document.addEventListener('click', function() {
+                                    menu.classList.add('hidden');
+                                });
+                            });
+                        </script>
+                    </div>
                 {% else %}
-                    <a href="/join/" class="inline-flex items-center gap-2 rounded-full border border-cyber/60 bg-cyber/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-cyber transition hover:bg-cyber hover:text-midnight">
-                        Join
-                        <span>→</span>
-                    </a>
+                    <div class="hidden items-center gap-8 text-xs uppercase tracking-[0.35em] text-white/70 sm:flex">
+                        <a href="{% url 'register' %}" class="inline-flex items-center gap-2 rounded-full border border-cyber/60 bg-cyber/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-cyber transition hover:bg-cyber hover:text-midnight">
+                            Join
+                            <span>+</span>
+                        </a>
+                        <a href="{% url 'login' %}" class="inline-flex items-center gap-2 rounded-full border border-cyber/60 bg-cyber/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-cyber transition hover:bg-cyber hover:text-midnight">
+                            Log In
+                            <span>→</span>
+                        </a>
+                    </div>
                 {% endif %}
             </div>
         </nav>
