@@ -15,6 +15,7 @@
 - [Homework 7](./docs/homework_7.md)
 - [Homework 8](./docs/homework_8.md)
 - [Homework 9](https://docs.djangoproject.com/en/6.0/intro/tutorial01/)
+- [Final Project Requirements](./docs/final_project.md)
 
 
 ## Books
